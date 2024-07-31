@@ -1,7 +1,7 @@
 
 type Button = {
     title: string
-    callback?: ()=>{}
+    callback?: ()=>void
 }
 export const Button = ({title, callback}: Button) => {
     return (
