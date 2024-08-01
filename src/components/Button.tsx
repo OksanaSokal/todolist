@@ -1,10 +1,10 @@
 
 type Button = {
     title: string
-    callback?: ()=>void
+    onClick?: ()=>void
 }
-export const Button = ({title, callback}: Button) => {
+export const Button = ({title, onClick}: Button) => {
     return (
-        <button onClick={callback}>{title}</button>
+        <button onClick={onClick}>{title}</button>
     )
 }
