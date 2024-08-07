@@ -25,6 +25,18 @@ function App() {
         setTasks([newTask,...tasks])
     }
 
+    const changeStatus = (taskId: string,newIsDone: boolean) => {
+        setTasks(tasks.map(el=> el.id === taskId ? {...el, isDone: newIsDone} : el))
+    }
+
+    // const changeStatus = (taskId: string,isDone: boolean) => {
+    //    const currentTask = tasks.find((el) => {
+    //        return el.id === taskId
+    //    })
+    //     if (currentTask) currentTask.isDone = isDone
+    //     setTasks([...tasks])
+    // }
+
     function removeTask(id: string) {
          let filteredTasks = tasks.filter(el=>el.id !== id)
         setTasks(filteredTasks)
@@ -44,7 +56,7 @@ function App() {
     }
     return (
         <div className="App">
-            <Todolist title = {'What to learn?'} tasks = {tasksForTodolist} removeTask={removeTask} filteredTask={filteredTask} addTask = {addTask}/>
+            <Todolist title = {'What to learn?'} tasks = {tasksForTodolist} removeTask={removeTask} filteredTask={filteredTask} addTask = {addTask} changeStatus={changeStatus}/>
         </div>
     );
 }

@@ -2,9 +2,10 @@
 type Button = {
     title: string
     onClick?: ()=>void
+    className?: string
 }
-export const Button = ({title, onClick}: Button) => {
+export const Button = ({title, onClick, className}: Button) => {
     return (
-        <button onClick={onClick}>{title}</button>
+        <button className={className} onClick={onClick}>{title}</button>
     )
 }
